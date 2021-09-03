@@ -1,0 +1,15 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+django = "~=3.2"
+djangorestframework = "~=3.12"
+markdown = "~=3.3"
+django-filter = "~=2.4"
+
+[dev-packages]
+
+[requires]
+python_version = "3"
