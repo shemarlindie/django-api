@@ -1,7 +1,8 @@
-from django.db.models import F
+from django.db.models import F, Count
 from django.http import HttpResponseRedirect
 from django.shortcuts import render, get_object_or_404
 from django.urls import reverse
+from django.utils import timezone
 from django.views import generic
 
 from .models import Question, Choice
@@ -12,17 +13,29 @@ class IndexView(generic.ListView):
     context_object_name = 'questions'
 
     def get_queryset(self):
-        return Question.objects.all().order_by('-pub_date')
+        now = timezone.now()
+        return (
+            Question.objects
+            .annotate(choice_count=Count('choice'))
+            .filter(pub_date__lte=now, choice_count__gt=0)  # ignore future and without choices
+            .order_by('-pub_date')
+        )
 
 
 class DetailView(generic.DetailView):
     model = Question
     template_name = 'polls/detail.html'
 
+    def get_queryset(self):
+        return self.model.objects.filter(pub_date__lte=timezone.now())
+
 
 class ResultsView(generic.DetailView):
     model = Question
     template_name = 'polls/results.html'
+
+    def get_queryset(self):
+        return self.model.objects.filter(pub_date__lte=timezone.now())
 
 
 def vote(request, model_id):
