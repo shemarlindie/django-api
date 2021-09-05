@@ -16,7 +16,7 @@ class IndexView(generic.ListView):
         now = timezone.now()
         return (
             Question.objects
-            .annotate(choice_count=Count('choice'))
+            .annotate(choice_count=Count('choices'))
             .filter(pub_date__lte=now, choice_count__gt=0)  # ignore future and without choices
             .order_by('-pub_date')
         )
@@ -41,7 +41,7 @@ class ResultsView(generic.DetailView):
 def vote(request, model_id):
     question = get_object_or_404(Question, pk=model_id)
     try:
-        choice = question.choice_set.get(pk=request.POST['choice'])
+        choice = question.choices.get(pk=request.POST['choice'])
     except (Choice.DoesNotExist, KeyError):
         return render(request, 'polls/detail.html', {
             'question': question,

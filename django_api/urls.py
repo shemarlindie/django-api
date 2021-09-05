@@ -21,4 +21,6 @@ urlpatterns = [
     path('', RedirectView.as_view(pattern_name='polls:index')),
     path('admin/', admin.site.urls),
     path('apps/', include('django_api.modules.urls')),
+
+    path('api/', include('django_api.api.urls')),
 ]
