@@ -2,7 +2,7 @@ from django.urls import reverse
 from rest_framework.permissions import BasePermission
 
 
-class IsCreate(BasePermission):
+class IsCreateView(BasePermission):
     """
     Allow access to "create" action on the view
     """
@@ -29,19 +29,23 @@ class IsOwnUserProfile(BasePermission):
     Allow any user to modify their own profile
     """
     def has_permission(self, request, view):
+        # ensure authenticated
         if not request.user.is_authenticated:
             return False
 
         # prevent access to user list
-        is_list_url = request.get_full_path() == reverse('auth_api:users-list')
-        if is_list_url:
+        if request.get_full_path() == reverse('auth_api:users-list'):
             return False
+
+        # allow access to user detail
+        if request.get_full_path() == reverse('auth_api:users-detail', args=(request.user.id,)):
+            return True
 
         # WORKAROUND: for some reason has_object_permission isn't called for DELETE
         # if view.action == 'destroy':
         #     return view.kwargs['pk'] == request.user.id
 
-        return True
+        return False
 
     def has_object_permission(self, request, view, obj):
-        return obj == request.user
+        return obj.id == request.user.id
