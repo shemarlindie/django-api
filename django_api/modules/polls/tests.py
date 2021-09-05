@@ -167,5 +167,5 @@ def create_question(question_text, days=0, with_choice=True):
     time = timezone.now() + datetime.timedelta(days=days)
     q = Question.objects.create(question_text=question_text, pub_date=time)
     if with_choice:
-        q.choice_set.create(choice_text='auto generated choice 1')
+        q.choices.create(choice_text='auto generated choice 1')
     return q
