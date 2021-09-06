@@ -45,10 +45,10 @@ class UserSerializer(serializers.ModelSerializer):
         return super(UserSerializer, self).validate(data)
 
     def get_full_name(self, obj):
-        return f'{obj.first_name} {obj.last_name}'
+        return f'{obj.first_name} {obj.last_name}' if obj.first_name and obj.last_name else ''
 
     def get_initials(self, obj):
-        return f'{obj.first_name[0]}{obj.last_name[0]}'
+        return f'{obj.first_name[0]}{obj.last_name[0]}' if obj.first_name and obj.last_name else ''
 
 
 class GroupSerializer(serializers.ModelSerializer):
