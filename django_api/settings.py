@@ -13,6 +13,8 @@ from datetime import timedelta
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
+import corsheaders.defaults
+
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 
@@ -40,7 +42,9 @@ INSTALLED_APPS = [
 
     'rest_framework',
     'knox',
+    'corsheaders',
 
+    'django_api.utils',
     'django_api.modules.polls.apps.PollsConfig',
 ]
 
@@ -52,6 +56,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
 ]
 
 ROOT_URLCONF = 'django_api.urls'
@@ -138,8 +143,13 @@ REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES': [
         'rest_framework.permissions.IsAuthenticated'
     ],
-    'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
+    'DEFAULT_PAGINATION_CLASS': 'django_api.utils.pagination.CustomPageNumberPagination',
     'PAGE_SIZE': 10,
+    'DEFAULT_FILTER_BACKENDS': [
+        'django_filters.rest_framework.DjangoFilterBackend',
+        'rest_framework.filters.SearchFilter',
+        'rest_framework.filters.OrderingFilter',
+    ],
 }
 
 REST_KNOX = {
@@ -147,3 +157,16 @@ REST_KNOX = {
   'USER_SERIALIZER': 'django_api.api.auth.serializers.UserSerializer',
   'AUTO_REFRESH': True,
 }
+
+CORS_ALLOWED_ORIGINS = [
+    "http://localhost",
+    "http://localhost:8000",
+]
+
+CORS_ALLOW_CREDENTIALS = True
+
+CORS_ALLOW_HEADERS = list(corsheaders.defaults.default_headers) + [
+    "pragma",
+    "cache-control",
+    "if-modified-since",
+]
