@@ -2,7 +2,7 @@ version: "3.5"
 
 services:
   web:
-    container_name: django_api_web
+    container_name: django_api
     build:
       context: .
       args:
