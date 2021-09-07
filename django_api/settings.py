@@ -9,7 +9,9 @@ https://docs.djangoproject.com/en/3.2/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.2/ref/settings/
 """
+import os
 from datetime import timedelta
+from distutils.util import strtobool
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -22,10 +24,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-e&k6^yj(e6#z48qc=1kl1b4r)f#btc2w!j03+ak8tj+d&ll2o!'
+SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'e&k6^yj(e6#z48qc=1kl1b4r)f#btc2w!j03+ak8tj+d&ll2o!')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = strtobool(os.environ.get('DEBUG', '1'))
 
 ALLOWED_HOSTS = []
 
@@ -159,10 +161,11 @@ REST_KNOX = {
   'AUTO_REFRESH': True,
 }
 
-CORS_ALLOWED_ORIGINS = [
-    "http://localhost",
-    "http://localhost:8000",
-]
+CORS_ALLOWED_ORIGINS = []
+if DEBUG:
+    CORS_ALLOWED_ORIGINS.extend(["http://localhost", "http://localhost:8000"])
+if os.environ.get('FRONTEND_URL'):
+    CORS_ALLOWED_ORIGINS.append(os.environ.get('FRONTEND_URL'))
 
 CORS_ALLOW_CREDENTIALS = True
 
