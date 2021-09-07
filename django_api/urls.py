@@ -18,7 +18,7 @@ from django.urls import path, include
 from django.views.generic import RedirectView
 
 urlpatterns = [
-    path('', RedirectView.as_view(pattern_name='polls:index')),
+    path('', RedirectView.as_view(url='api/')),
     path('admin/', admin.site.urls),
     path('apps/', include('django_api.modules.urls')),
 
