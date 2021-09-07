@@ -1,0 +1,462 @@
+[
+  {
+    "model": "auth.user",
+    "pk": 1,
+    "fields": {
+      "password": "pbkdf2_sha256$260000$zqelkUzQlpwm5axj7VNtod$OSs9ggLQA2/IPllmCbk4BUZCqySYjnQCyCB8WK8XvKw=",
+      "last_login": "2021-09-06T23:32:39.842Z",
+      "is_superuser": true,
+      "username": "shemar",
+      "first_name": "Shemar",
+      "last_name": "Lindie",
+      "email": "shemarlindie@gmail.com",
+      "is_staff": true,
+      "is_active": true,
+      "date_joined": "2021-09-06T22:07:32Z",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "auth.user",
+    "pk": 2,
+    "fields": {
+      "password": "pbkdf2_sha256$260000$t4Krgw3ltOfsTLiQYR1hY9$rXau3TjkvryY5xNOAgriYk+B8dKKfnHs6czeCgptRmA=",
+      "last_login": null,
+      "is_superuser": false,
+      "username": "jake",
+      "first_name": "Jake",
+      "last_name": "Peralta",
+      "email": "jake@example.com",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2021-09-06T22:59:53Z",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "auth.user",
+    "pk": 3,
+    "fields": {
+      "password": "pbkdf2_sha256$260000$5Fruvj7kP3lK4n2y2nF4Mb$AVato+TR1S1jGvKVC99SLd9bwsB+JXDS767xY2bLYxo=",
+      "last_login": null,
+      "is_superuser": false,
+      "username": "amy",
+      "first_name": "Amy",
+      "last_name": "Santiago",
+      "email": "amy@example.com",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2021-09-06T23:01:32Z",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "issue.tag",
+    "pk": 1,
+    "fields": {
+      "date_created": "2021-09-06T22:08:11.499Z",
+      "date_updated": "2021-09-06T22:08:11.499Z",
+      "created_by": null,
+      "modified_by": null,
+      "name": "Web Application"
+    }
+  },
+  {
+    "model": "issue.tag",
+    "pk": 2,
+    "fields": {
+      "date_created": "2021-09-06T22:08:34.040Z",
+      "date_updated": "2021-09-06T22:08:34.040Z",
+      "created_by": null,
+      "modified_by": null,
+      "name": "Website"
+    }
+  },
+  {
+    "model": "issue.issuestatus",
+    "pk": 1,
+    "fields": {
+      "date_created": "2021-09-06T22:11:11.896Z",
+      "date_updated": "2021-09-06T22:11:11.896Z",
+      "created_by": null,
+      "modified_by": null,
+      "name": "Open"
+    }
+  },
+  {
+    "model": "issue.issuestatus",
+    "pk": 2,
+    "fields": {
+      "date_created": "2021-09-06T22:11:13.904Z",
+      "date_updated": "2021-09-06T22:11:13.905Z",
+      "created_by": null,
+      "modified_by": null,
+      "name": "In Progress"
+    }
+  },
+  {
+    "model": "issue.issuestatus",
+    "pk": 3,
+    "fields": {
+      "date_created": "2021-09-06T22:11:20.736Z",
+      "date_updated": "2021-09-06T22:11:20.736Z",
+      "created_by": null,
+      "modified_by": null,
+      "name": "Ready for Retest"
+    }
+  },
+  {
+    "model": "issue.issuestatus",
+    "pk": 4,
+    "fields": {
+      "date_created": "2021-09-06T22:11:27.009Z",
+      "date_updated": "2021-09-06T22:11:27.009Z",
+      "created_by": null,
+      "modified_by": null,
+      "name": "Resolved"
+    }
+  },
+  {
+    "model": "issue.issuestatus",
+    "pk": 5,
+    "fields": {
+      "date_created": "2021-09-06T22:11:34.783Z",
+      "date_updated": "2021-09-06T22:11:34.783Z",
+      "created_by": null,
+      "modified_by": null,
+      "name": "On Hold"
+    }
+  },
+  {
+    "model": "issue.issuestatus",
+    "pk": 6,
+    "fields": {
+      "date_created": "2021-09-06T22:11:40.824Z",
+      "date_updated": "2021-09-06T22:11:40.824Z",
+      "created_by": null,
+      "modified_by": null,
+      "name": "Invalid"
+    }
+  },
+  {
+    "model": "issue.issuepriority",
+    "pk": 1,
+    "fields": {
+      "date_created": "2021-09-06T22:12:18.663Z",
+      "date_updated": "2021-09-06T22:12:18.663Z",
+      "created_by": null,
+      "modified_by": null,
+      "name": "Low"
+    }
+  },
+  {
+    "model": "issue.issuepriority",
+    "pk": 2,
+    "fields": {
+      "date_created": "2021-09-06T22:12:22.566Z",
+      "date_updated": "2021-09-06T22:12:22.566Z",
+      "created_by": null,
+      "modified_by": null,
+      "name": "Medium"
+    }
+  },
+  {
+    "model": "issue.issuepriority",
+    "pk": 3,
+    "fields": {
+      "date_created": "2021-09-06T22:12:25.365Z",
+      "date_updated": "2021-09-06T22:12:25.365Z",
+      "created_by": null,
+      "modified_by": null,
+      "name": "High"
+    }
+  },
+  {
+    "model": "issue.issuepriority",
+    "pk": 4,
+    "fields": {
+      "date_created": "2021-09-06T22:12:28.030Z",
+      "date_updated": "2021-09-06T22:12:34.582Z",
+      "created_by": null,
+      "modified_by": null,
+      "name": "Critical"
+    }
+  },
+  {
+    "model": "issue.issuetype",
+    "pk": 1,
+    "fields": {
+      "date_created": "2021-09-06T22:10:06.223Z",
+      "date_updated": "2021-09-06T22:10:06.223Z",
+      "created_by": null,
+      "modified_by": null,
+      "name": "Bug"
+    }
+  },
+  {
+    "model": "issue.issuetype",
+    "pk": 2,
+    "fields": {
+      "date_created": "2021-09-06T22:10:16.067Z",
+      "date_updated": "2021-09-06T22:10:16.067Z",
+      "created_by": null,
+      "modified_by": null,
+      "name": "Task"
+    }
+  },
+  {
+    "model": "issue.issuetype",
+    "pk": 3,
+    "fields": {
+      "date_created": "2021-09-06T22:10:24.796Z",
+      "date_updated": "2021-09-06T22:10:24.796Z",
+      "created_by": null,
+      "modified_by": null,
+      "name": "Enhancement"
+    }
+  },
+  {
+    "model": "issue.issuetype",
+    "pk": 4,
+    "fields": {
+      "date_created": "2021-09-06T22:10:30.907Z",
+      "date_updated": "2021-09-06T22:10:30.907Z",
+      "created_by": null,
+      "modified_by": null,
+      "name": "Feature"
+    }
+  },
+  {
+    "model": "issue.issuetype",
+    "pk": 5,
+    "fields": {
+      "date_created": "2021-09-06T22:10:37.442Z",
+      "date_updated": "2021-09-06T22:10:37.442Z",
+      "created_by": null,
+      "modified_by": null,
+      "name": "Proposal"
+    }
+  },
+  {
+    "model": "issue.project",
+    "pk": 1,
+    "fields": {
+      "date_created": "2021-09-06T22:16:56.193Z",
+      "date_updated": "2021-09-06T22:16:56.193Z",
+      "created_by": 1,
+      "modified_by": null,
+      "name": "Issue Tracker",
+      "client": null,
+      "description": "A project manager and issue tracker.",
+      "date_due": null,
+      "owner": 1,
+      "collaborators": [
+        1
+      ]
+    }
+  },
+  {
+    "model": "issue.project",
+    "pk": 2,
+    "fields": {
+      "date_created": "2021-09-06T23:02:36.076Z",
+      "date_updated": "2021-09-06T23:02:36.076Z",
+      "created_by": 1,
+      "modified_by": null,
+      "name": "Lightbulb",
+      "client": "Imagination",
+      "description": "An idea board built with AngularJS and Firebase.",
+      "date_due": null,
+      "owner": 1,
+      "collaborators": [
+        1
+      ]
+    }
+  },
+  {
+    "model": "issue.project",
+    "pk": 3,
+    "fields": {
+      "date_created": "2021-09-06T23:14:02.516Z",
+      "date_updated": "2021-09-06T23:19:24.692Z",
+      "created_by": 1,
+      "modified_by": 1,
+      "name": "Example Project",
+      "client": "Lorem Ipsum",
+      "description": "Sed feugiat commodo odio in rutrum. Donec auctor tristique metus non fringilla. Curabitur sagittis, ante id ullamcorper iaculis, metus eros fringilla magna, non sagittis eros tellus a orci.",
+      "date_due": "2022-01-01T04:00:00Z",
+      "owner": 1,
+      "collaborators": [
+        1,
+        2
+      ]
+    }
+  },
+  {
+    "model": "issue.project",
+    "pk": 4,
+    "fields": {
+      "date_created": "2021-09-06T23:14:32.692Z",
+      "date_updated": "2021-09-06T23:14:32.692Z",
+      "created_by": 1,
+      "modified_by": null,
+      "name": "Dummy Project",
+      "client": "Dummy",
+      "description": "Dummy data.",
+      "date_due": null,
+      "owner": 1,
+      "collaborators": [
+        1
+      ]
+    }
+  },
+  {
+    "model": "issue.issue",
+    "pk": 1,
+    "fields": {
+      "date_created": "2021-09-06T23:15:09.176Z",
+      "date_updated": "2021-09-06T23:27:53.511Z",
+      "created_by": 1,
+      "modified_by": 1,
+      "name": "Dummy issue",
+      "description": "Dummy issue data\n\nVestibulum non nunc nisl. Phasellus luctus dapibus orci ut egestas. Donec fringilla purus dui, vehicula rhoncus velit maximus ac. Curabitur porta mauris eu congue convallis. Donec bibendum, lacus sit amet euismod sollicitudin, ipsum lacus finibus nibh, et blandit lectus tellus sed metus. \n\nInteger aliquam, neque pharetra fermentum interdum, turpis velit accumsan tellus, ac sodales ipsum libero ut arcu. Curabitur consequat tortor ac diam porta rhoncus.",
+      "date_due": "2022-02-01T04:00:00Z",
+      "reported_by": 1,
+      "project": 4,
+      "status": 4,
+      "priority": 1,
+      "type": 1,
+      "testers": [
+        1,
+        2
+      ],
+      "fixers": [
+        3
+      ],
+      "tags": [
+        1
+      ]
+    }
+  },
+  {
+    "model": "issue.issue",
+    "pk": 2,
+    "fields": {
+      "date_created": "2021-09-06T23:17:56.010Z",
+      "date_updated": "2021-09-06T23:18:49.798Z",
+      "created_by": 1,
+      "modified_by": 1,
+      "name": "To delete",
+      "description": "i will delete this issue",
+      "date_due": null,
+      "reported_by": 1,
+      "project": 4,
+      "status": 4,
+      "priority": 1,
+      "type": 1,
+      "testers": [
+        1,
+        2
+      ],
+      "fixers": [
+        3
+      ],
+      "tags": [
+        2
+      ]
+    }
+  },
+  {
+    "model": "issue.issuecomment",
+    "pk": 1,
+    "fields": {
+      "date_created": "2021-09-06T23:15:48.756Z",
+      "date_updated": "2021-09-06T23:15:48.756Z",
+      "created_by": 1,
+      "modified_by": null,
+      "name": null,
+      "description": "a sample comment",
+      "commenter": 1,
+      "issue": 1,
+      "status": null
+    }
+  },
+  {
+    "model": "issue.issuecomment",
+    "pk": 3,
+    "fields": {
+      "date_created": "2021-09-06T23:16:03.464Z",
+      "date_updated": "2021-09-06T23:16:03.464Z",
+      "created_by": 1,
+      "modified_by": null,
+      "name": null,
+      "description": "it has begun",
+      "commenter": 1,
+      "issue": 1,
+      "status": 2
+    }
+  },
+  {
+    "model": "issue.issuecomment",
+    "pk": 4,
+    "fields": {
+      "date_created": "2021-09-06T23:16:44.626Z",
+      "date_updated": "2021-09-06T23:16:44.626Z",
+      "created_by": 1,
+      "modified_by": null,
+      "name": null,
+      "description": "Okay, it's done!",
+      "commenter": 1,
+      "issue": 1,
+      "status": 4
+    }
+  },
+  {
+    "model": "issue.issuecomment",
+    "pk": 5,
+    "fields": {
+      "date_created": "2021-09-06T23:18:15.520Z",
+      "date_updated": "2021-09-06T23:18:15.521Z",
+      "created_by": 1,
+      "modified_by": null,
+      "name": null,
+      "description": "started",
+      "commenter": 1,
+      "issue": 2,
+      "status": 2
+    }
+  },
+  {
+    "model": "issue.issuecomment",
+    "pk": 6,
+    "fields": {
+      "date_created": "2021-09-06T23:18:30.992Z",
+      "date_updated": "2021-09-06T23:18:30.992Z",
+      "created_by": 1,
+      "modified_by": null,
+      "name": null,
+      "description": "some discussion here\n\nlorel",
+      "commenter": 1,
+      "issue": 2,
+      "status": null
+    }
+  },
+  {
+    "model": "issue.issuecomment",
+    "pk": 7,
+    "fields": {
+      "date_created": "2021-09-06T23:18:49.866Z",
+      "date_updated": "2021-09-06T23:18:49.866Z",
+      "created_by": 1,
+      "modified_by": null,
+      "name": null,
+      "description": "and it's done now",
+      "commenter": 1,
+      "issue": 2,
+      "status": 4
+    }
+  }
+]

@@ -46,6 +46,7 @@ INSTALLED_APPS = [
 
     'django_api.utils',
     'django_api.modules.polls.apps.PollsConfig',
+    'django_api.api.issue.apps.IssueConfig',
 ]
 
 MIDDLEWARE = [

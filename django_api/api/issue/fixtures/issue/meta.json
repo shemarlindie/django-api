@@ -1,0 +1,189 @@
+[
+  {
+    "model": "issue.tag",
+    "pk": 1,
+    "fields": {
+      "date_created": "2021-09-06T22:08:11.499Z",
+      "date_updated": "2021-09-06T22:08:11.499Z",
+      "created_by": null,
+      "modified_by": null,
+      "name": "Web Application"
+    }
+  },
+  {
+    "model": "issue.tag",
+    "pk": 2,
+    "fields": {
+      "date_created": "2021-09-06T22:08:34.040Z",
+      "date_updated": "2021-09-06T22:08:34.040Z",
+      "created_by": null,
+      "modified_by": null,
+      "name": "Website"
+    }
+  },
+  {
+    "model": "issue.issuestatus",
+    "pk": 1,
+    "fields": {
+      "date_created": "2021-09-06T22:11:11.896Z",
+      "date_updated": "2021-09-06T22:11:11.896Z",
+      "created_by": null,
+      "modified_by": null,
+      "name": "Open"
+    }
+  },
+  {
+    "model": "issue.issuestatus",
+    "pk": 2,
+    "fields": {
+      "date_created": "2021-09-06T22:11:13.904Z",
+      "date_updated": "2021-09-06T22:11:13.905Z",
+      "created_by": null,
+      "modified_by": null,
+      "name": "In Progress"
+    }
+  },
+  {
+    "model": "issue.issuestatus",
+    "pk": 3,
+    "fields": {
+      "date_created": "2021-09-06T22:11:20.736Z",
+      "date_updated": "2021-09-06T22:11:20.736Z",
+      "created_by": null,
+      "modified_by": null,
+      "name": "Ready for Retest"
+    }
+  },
+  {
+    "model": "issue.issuestatus",
+    "pk": 4,
+    "fields": {
+      "date_created": "2021-09-06T22:11:27.009Z",
+      "date_updated": "2021-09-06T22:11:27.009Z",
+      "created_by": null,
+      "modified_by": null,
+      "name": "Resolved"
+    }
+  },
+  {
+    "model": "issue.issuestatus",
+    "pk": 5,
+    "fields": {
+      "date_created": "2021-09-06T22:11:34.783Z",
+      "date_updated": "2021-09-06T22:11:34.783Z",
+      "created_by": null,
+      "modified_by": null,
+      "name": "On Hold"
+    }
+  },
+  {
+    "model": "issue.issuestatus",
+    "pk": 6,
+    "fields": {
+      "date_created": "2021-09-06T22:11:40.824Z",
+      "date_updated": "2021-09-06T22:11:40.824Z",
+      "created_by": null,
+      "modified_by": null,
+      "name": "Invalid"
+    }
+  },
+  {
+    "model": "issue.issuepriority",
+    "pk": 1,
+    "fields": {
+      "date_created": "2021-09-06T22:12:18.663Z",
+      "date_updated": "2021-09-06T22:12:18.663Z",
+      "created_by": null,
+      "modified_by": null,
+      "name": "Low"
+    }
+  },
+  {
+    "model": "issue.issuepriority",
+    "pk": 2,
+    "fields": {
+      "date_created": "2021-09-06T22:12:22.566Z",
+      "date_updated": "2021-09-06T22:12:22.566Z",
+      "created_by": null,
+      "modified_by": null,
+      "name": "Medium"
+    }
+  },
+  {
+    "model": "issue.issuepriority",
+    "pk": 3,
+    "fields": {
+      "date_created": "2021-09-06T22:12:25.365Z",
+      "date_updated": "2021-09-06T22:12:25.365Z",
+      "created_by": null,
+      "modified_by": null,
+      "name": "High"
+    }
+  },
+  {
+    "model": "issue.issuepriority",
+    "pk": 4,
+    "fields": {
+      "date_created": "2021-09-06T22:12:28.030Z",
+      "date_updated": "2021-09-06T22:12:34.582Z",
+      "created_by": null,
+      "modified_by": null,
+      "name": "Critical"
+    }
+  },
+  {
+    "model": "issue.issuetype",
+    "pk": 1,
+    "fields": {
+      "date_created": "2021-09-06T22:10:06.223Z",
+      "date_updated": "2021-09-06T22:10:06.223Z",
+      "created_by": null,
+      "modified_by": null,
+      "name": "Bug"
+    }
+  },
+  {
+    "model": "issue.issuetype",
+    "pk": 2,
+    "fields": {
+      "date_created": "2021-09-06T22:10:16.067Z",
+      "date_updated": "2021-09-06T22:10:16.067Z",
+      "created_by": null,
+      "modified_by": null,
+      "name": "Task"
+    }
+  },
+  {
+    "model": "issue.issuetype",
+    "pk": 3,
+    "fields": {
+      "date_created": "2021-09-06T22:10:24.796Z",
+      "date_updated": "2021-09-06T22:10:24.796Z",
+      "created_by": null,
+      "modified_by": null,
+      "name": "Enhancement"
+    }
+  },
+  {
+    "model": "issue.issuetype",
+    "pk": 4,
+    "fields": {
+      "date_created": "2021-09-06T22:10:30.907Z",
+      "date_updated": "2021-09-06T22:10:30.907Z",
+      "created_by": null,
+      "modified_by": null,
+      "name": "Feature"
+    }
+  },
+  {
+    "model": "issue.issuetype",
+    "pk": 5,
+    "fields": {
+      "date_created": "2021-09-06T22:10:37.442Z",
+      "date_updated": "2021-09-06T22:10:37.442Z",
+      "created_by": null,
+      "modified_by": null,
+      "name": "Proposal"
+    }
+  }
+]
