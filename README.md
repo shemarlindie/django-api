@@ -2,6 +2,10 @@
 
 ![](screenshots/api_root.png)
 
+Demo: https://issue-tracker-api.shemarlindie.com/
+
+See screenshots [here](screenshots).
+
 ## Overview
 - Built with Django 3
 - Uses [Rest Framework](https://github.com/encode/django-rest-framework) for API views
