@@ -1,0 +1,10 @@
+**/.git
+db.sqlite3
+
+.vscode
+.idea
+
+### macOS ###
+.DS_Store
+.AppleDouble
+.LSOverride

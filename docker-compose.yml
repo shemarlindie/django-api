@@ -1,0 +1,15 @@
+version: "3.5"
+
+services:
+  web:
+    container_name: django_api_web
+    build:
+      context: .
+      args:
+        - DJANGO_SUPERUSER_USERNAME
+        - DJANGO_SUPERUSER_EMAIL
+        - DJANGO_SUPERUSER_PASSWORD
+    env_file: .env
+    restart: unless-stopped
+#    ports:
+#      - "8000:80"
