@@ -2,7 +2,10 @@
 
 ![](screenshots/api_root.png)
 
-Demo: https://issue-tracker-api.shemarlindie.com/
+### Demo
+https://issue-tracker-api.shemarlindie.com/
+
+User -- `demo` : `Gir@ff3s`
 
 See screenshots [here](screenshots).
 
