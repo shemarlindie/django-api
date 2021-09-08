@@ -14,10 +14,15 @@ from datetime import timedelta
 from distutils.util import strtobool
 from pathlib import Path
 
+from environs import Env
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 import corsheaders.defaults
 
 BASE_DIR = Path(__file__).resolve().parent.parent
+
+env = Env()
+env.read_env()
 
 
 # Quick-start development settings - unsuitable for production
@@ -164,8 +169,7 @@ REST_KNOX = {
 CORS_ALLOWED_ORIGINS = []
 if DEBUG:
     CORS_ALLOWED_ORIGINS.extend(["http://localhost", "http://localhost:8000"])
-if os.environ.get('FRONTEND_URL'):
-    CORS_ALLOWED_ORIGINS.append(os.environ.get('FRONTEND_URL'))
+CORS_ALLOWED_ORIGINS.extend([url.strip() for url in env.list('FRONTEND_URL') if url.strip()])
 
 CORS_ALLOW_CREDENTIALS = True
 
