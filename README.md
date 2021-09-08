@@ -3,7 +3,7 @@
 ![](screenshots/api_root.png)
 
 ### Demo
-https://issue-tracker-api.shemarlindie.com/
+https://django-api.shemarlindie.com/
 
 User -- `demo` : `Gir@ff3s`
 
