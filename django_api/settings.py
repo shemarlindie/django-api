@@ -34,7 +34,7 @@ SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'e&k6^yj(e6#z48qc=1kl1b4r)f#btc
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = strtobool(os.environ.get('DEBUG', '1'))
 
-ALLOWED_HOSTS = [url.strip() for url in env.list('FRONTEND_URL', []) if url.strip()]
+ALLOWED_HOSTS = [url.strip() for url in env.list('ALLOWED_HOSTS', []) if url.strip()]
 
 
 # Application definition
@@ -169,7 +169,7 @@ REST_KNOX = {
 CORS_ALLOWED_ORIGINS = []
 if DEBUG:
     CORS_ALLOWED_ORIGINS.extend(["http://localhost", "http://localhost:8000"])
-CORS_ALLOWED_ORIGINS.extend(ALLOWED_HOSTS)
+CORS_ALLOWED_ORIGINS.extend([url.strip() for url in env.list('FRONTEND_URL', []) if url.strip()])
 
 CORS_ALLOW_CREDENTIALS = True
 
