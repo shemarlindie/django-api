@@ -1,5 +1,5 @@
 from django.urls import reverse
-from rest_framework.permissions import BasePermission
+from rest_framework.permissions import BasePermission, SAFE_METHODS
 
 
 class IsCreateView(BasePermission):
@@ -18,10 +18,18 @@ class IsStaff(BasePermission):
     Allow staff to perform any operation
     """
     def has_permission(self, request, view):
-        return all([request.user.is_authenticated, request.user.is_staff])
+        return bool(request.user and request.user.is_authenticated and request.user.is_staff)
 
     def has_object_permission(self, request, view, obj):
         return self.has_permission(request, view)
+
+
+class IsStaffOrReadOnly(BasePermission):
+    """
+    Only staff can edit, anyone else can view
+    """
+    def has_permission(self, request, view):
+        return bool(request.method in SAFE_METHODS or request.user and request.user.is_staff)
 
 
 class IsOwnUserProfile(BasePermission):
@@ -30,7 +38,7 @@ class IsOwnUserProfile(BasePermission):
     """
     def has_permission(self, request, view):
         # ensure authenticated
-        if not request.user.is_authenticated:
+        if not (request.user and request.user.is_authenticated):
             return False
 
         # prevent access to user list
