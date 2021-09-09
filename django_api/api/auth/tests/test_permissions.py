@@ -2,8 +2,9 @@ from unittest.mock import MagicMock
 
 from django.test import TestCase
 from django.urls import reverse
+from rest_framework.permissions import SAFE_METHODS
 
-from django_api.api.auth.permissions import IsCreateView, IsStaff, IsOwnUserProfile
+from django_api.api.auth.permissions import IsCreateView, IsStaff, IsOwnUserProfile, IsStaffOrReadOnly
 
 
 class PermissionsTests(TestCase):
@@ -45,16 +46,22 @@ class PermissionsTests(TestCase):
 
         self.assertFalse(access)
 
-    def assert_is_staff(self, is_authenticated, is_staff, expected_access):
-        """
-        Helper for asserting IsStaff view-level and object-level permissions.
-        """
-        perm = IsStaff()
+    def build_mock_user_request(self, is_authenticated, is_staff, method=None):
         mock_user = MagicMock()
         mock_user.is_authenticated = is_authenticated
         mock_user.is_staff = is_staff
         mock_request = MagicMock()
         mock_request.user = mock_user
+        mock_request.method = method if method else None
+
+        return mock_request
+
+    def assert_is_staff(self, is_authenticated, is_staff, expected_access):
+        """
+        Helper for asserting IsStaff view-level and object-level permissions.
+        """
+        perm = IsStaff()
+        mock_request = self.build_mock_user_request(is_authenticated, is_staff)
         mock_view = MagicMock()
         access = perm.has_permission(mock_request, mock_view)
         object_access = perm.has_object_permission(mock_request, mock_view, MagicMock())
@@ -177,3 +184,34 @@ class PermissionsTests(TestCase):
         perm = IsOwnUserProfile()
         self.assertTrue(perm.has_object_permission(mock_request_owned, MagicMock(), mock_obj_owned))
         self.assertFalse(perm.has_object_permission(mock_request_not_owned, MagicMock(), mock_obj_not_owned))
+
+    def test_is_staff_or_read_only_as_staff(self):
+        """
+        Permission is granted to for all methods for staff users
+        """
+        perm = IsStaffOrReadOnly()
+        methods = SAFE_METHODS + (
+            'POST', 'PUT', 'PATCH', 'DELETE'
+        )
+
+        for m in methods:
+            mock_request = self.build_mock_user_request(True, True, m)
+            self.assertTrue(perm.has_permission(mock_request, MagicMock()))
+
+    def test_is_staff_or_read_only_authenticated(self):
+        """
+        Permission is denied to for unsafe methods for regular users (non-staff) but granted for safe methods
+        """
+        perm = IsStaffOrReadOnly()
+        unsafe_methods = [
+            'POST', 'PUT', 'PATCH', 'DELETE'
+        ]
+        # check denial for unsafe
+        for m in unsafe_methods:
+            mock_request = self.build_mock_user_request(True, False, m)
+            self.assertFalse(perm.has_permission(mock_request, MagicMock()))
+
+        # check granted for safe
+        for m in SAFE_METHODS:
+            mock_request = self.build_mock_user_request(True, False, m)
+            self.assertTrue(perm.has_permission(mock_request, MagicMock()))
