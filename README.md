@@ -5,7 +5,8 @@ Includes various utility apps / endpoints.
 ![](screenshots/api_root.png)
 
 ### Demo
-https://django-api.shemarlindie.com/api/explorer/login/?next=/api/issue/
+
+[Issue API Explorer](https://django-api.shemarlindie.com/api/explorer/login/?next=/api/issue/)
 
 User -- `demo` : `Gir@ff3s`
 
