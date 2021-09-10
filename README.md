@@ -1,5 +1,7 @@
 # A Django-powered API
 
+Includes various utility apps / endpoints.
+
 ![](screenshots/api_root.png)
 
 ### Demo
@@ -14,7 +16,7 @@ See screenshots [here](screenshots).
 - Uses [Rest Framework](https://github.com/encode/django-rest-framework) for API views
 - Uses [Knox Token Authentication](https://github.com/James1345/django-rest-knox)
 - Has examples of:
-    - JSON API views (`issue`, `polls`, `auth`)
+    - JSON API views (`skill`, `issue`, `polls`, `auth`)
     - Regular Django views (`polls`)
 
 ## Project Structure
@@ -34,15 +36,10 @@ See screenshots [here](screenshots).
 2. Open Pipenv shell
 > pipenv shell
 
-3. Make DB migrations
-> python manage.py makemigrations
-
-> python manage.py makemigrations polls issue
-
-4. Run migrations
+3. Run migrations
 > python manage.py migrate
 
-5. Create superuser
+4. Create superuser
 > python manage.py createsuperuser
 
 Follow the prompts to create an admin user.
@@ -56,6 +53,11 @@ This will load dummy data for the issue module. It includes:
 - Projects
 - Issues
 
+> python manage.py loaddata skill/skills
+
+This will load dummy data for the skill module. It includes:
+- Skills
+
 ## Run
 
 > python manage.py runserver
@@ -63,7 +65,6 @@ This will load dummy data for the issue module. It includes:
 #### Try:
 
 - Admin Backend: http://localhost:8000/admin/
-- API Explorer: http://localhost:8000/api/
 
 - Auth API: http://localhost:8000/api/auth
 
