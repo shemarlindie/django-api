@@ -1,0 +1,114 @@
+[
+  {
+    "model": "skill.skill",
+    "pk": 1,
+    "fields": {
+      "date_created": "2021-09-09T23:43:30.707Z",
+      "date_updated": "2021-09-10T11:15:28.589Z",
+      "created_by": null,
+      "modified_by": null,
+      "name": "AngularJS",
+      "description": null,
+      "visible": true,
+      "icon": "angularjs"
+    }
+  },
+  {
+    "model": "skill.skill",
+    "pk": 2,
+    "fields": {
+      "date_created": "2021-09-09T23:43:50.552Z",
+      "date_updated": "2021-09-10T10:58:11.014Z",
+      "created_by": null,
+      "modified_by": null,
+      "name": "HTML",
+      "description": null,
+      "visible": true,
+      "icon": "html5"
+    }
+  },
+  {
+    "model": "skill.skill",
+    "pk": 3,
+    "fields": {
+      "date_created": "2021-09-09T23:43:54.565Z",
+      "date_updated": "2021-09-10T10:58:22.430Z",
+      "created_by": null,
+      "modified_by": null,
+      "name": "CSS",
+      "description": null,
+      "visible": true,
+      "icon": "css3"
+    }
+  },
+  {
+    "model": "skill.skill",
+    "pk": 4,
+    "fields": {
+      "date_created": "2021-09-09T23:44:04.882Z",
+      "date_updated": "2021-09-10T10:55:41.622Z",
+      "created_by": null,
+      "modified_by": null,
+      "name": "JavaScript",
+      "description": null,
+      "visible": true,
+      "icon": "javascript"
+    }
+  },
+  {
+    "model": "skill.skill",
+    "pk": 5,
+    "fields": {
+      "date_created": "2021-09-09T23:44:14.027Z",
+      "date_updated": "2021-09-10T10:55:36.941Z",
+      "created_by": null,
+      "modified_by": null,
+      "name": "Firebase",
+      "description": null,
+      "visible": true,
+      "icon": "firebase"
+    }
+  },
+  {
+    "model": "skill.skill",
+    "pk": 6,
+    "fields": {
+      "date_created": "2021-09-09T23:44:21.881Z",
+      "date_updated": "2021-09-10T10:55:33.020Z",
+      "created_by": null,
+      "modified_by": null,
+      "name": "Drupal",
+      "description": null,
+      "visible": true,
+      "icon": "drupal",
+    }
+  },
+  {
+    "model": "skill.skill",
+    "pk": 7,
+    "fields": {
+      "date_created": "2021-09-09T23:44:26.323Z",
+      "date_updated": "2021-09-10T10:55:28.949Z",
+      "created_by": null,
+      "modified_by": null,
+      "name": "PHP",
+      "description": null,
+      "visible": true,
+      "icon": "php",
+    }
+  },
+  {
+    "model": "skill.skill",
+    "pk": 8,
+    "fields": {
+      "date_created": "2021-09-09T23:45:21.418Z",
+      "date_updated": "2021-09-10T10:55:24.485Z",
+      "created_by": null,
+      "modified_by": null,
+      "name": "MySQL",
+      "description": null,
+      "visible": true,
+      "icon": "mysql"
+    }
+  }
+]

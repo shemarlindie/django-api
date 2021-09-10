@@ -7,8 +7,6 @@ RUN pip install pipenv
 COPY . .
 
 RUN pipenv install
-RUN pipenv run python manage.py makemigrations
-RUN pipenv run python manage.py makemigrations polls issue
 RUN pipenv run python manage.py migrate
 
 ARG DJANGO_SUPERUSER_USERNAME
