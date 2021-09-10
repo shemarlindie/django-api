@@ -14,6 +14,9 @@ ARG DJANGO_SUPERUSER_EMAIL
 ARG DJANGO_SUPERUSER_PASSWORD
 RUN pipenv run python manage.py createsuperuser --noinput
 
+RUN pipenv run python manage.py loaddata issue/all
+RUN pipenv run python manage.py loaddata skill/skills
+
 ENTRYPOINT [ "pipenv", "run", "python", "manage.py", "runserver", "0.0.0.0:80" ]
 
 EXPOSE 80

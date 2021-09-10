@@ -80,7 +80,7 @@
       "name": "Drupal",
       "description": null,
       "visible": true,
-      "icon": "drupal",
+      "icon": "drupal"
     }
   },
   {
@@ -94,7 +94,7 @@
       "name": "PHP",
       "description": null,
       "visible": true,
-      "icon": "php",
+      "icon": "php"
     }
   },
   {
