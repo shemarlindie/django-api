@@ -4,13 +4,17 @@ Includes various utility apps / endpoints.
 
 ![](screenshots/api_root.png)
 
-### Demo
+### Demos
+These web apps provide a frontend to the APIs in this project.
 
-[Issue API Explorer](https://django-api.shemarlindie.com/api/explorer/login/?next=/api/issue/)
+- [Issue API Explorer](https://django-api.shemarlindie.com/api/explorer/login/?next=/api/issue/)
+
+- [Issue Tracker app](https://github.com/shemarlindie/issue-tracker)
+
+- [Skill Reference app](https://github.com/shemarlindie/skill-reference)
 
 User -- `demo` : `Gir@ff3s`
 
-See screenshots [here](screenshots).
 
 ## Overview
 - Built with Django 3
@@ -97,7 +101,3 @@ Use `<auth token>` with the `Authorization` header on subsequent request like th
 ```
 Authorization: Token <auth token>
 ```
-
-## Frontend
-
-See [Issue Tracker](https://github.com/shemarlindie/issue-tracker) implementation for a frontend to the `issue` API.
