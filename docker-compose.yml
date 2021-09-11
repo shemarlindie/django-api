@@ -10,6 +10,6 @@ services:
         - DJANGO_SUPERUSER_EMAIL
         - DJANGO_SUPERUSER_PASSWORD
     env_file: .env
-    restart: unless-stopped
+    restart: always
 #    ports:
 #      - "8000:80"
