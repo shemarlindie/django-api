@@ -12,7 +12,7 @@ class SkillSerializer(BaseModelSerializer):
         fields = '__all__'
 
     def get_project_count(self, instance):
-        return instance.projects.count()
+        return instance.projects.filter(visible=True).count()
 
 
 class ProjectSerializer(BaseModelSerializer):
@@ -27,4 +27,4 @@ class ProjectSerializer(BaseModelSerializer):
         fields = '__all__'
 
     def get_skill_count(self, instance):
-        return instance.skills.count()
+        return instance.skills.filter(visible=True).count()

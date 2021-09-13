@@ -6,7 +6,7 @@ from ..auth.permissions import IsStaffOrReadOnly
 
 
 class ProjectViewSet(viewsets.ModelViewSet):
-    queryset = Project.objects.all().order_by('-id')
+    queryset = Project.objects.all().filter(visible=True).order_by('-id')
     serializer_class = ProjectSerializer
     permission_classes = [IsStaffOrReadOnly]
     filterset_fields = [f.name for f in Project._meta.get_fields()]
@@ -15,7 +15,7 @@ class ProjectViewSet(viewsets.ModelViewSet):
 
 
 class SkillViewSet(viewsets.ModelViewSet):
-    queryset = Skill.objects.all().order_by('id')
+    queryset = Skill.objects.all().filter(visible=True).order_by('id')
     serializer_class = SkillSerializer
     permission_classes = [IsStaffOrReadOnly]
     filterset_fields = [f.name for f in Skill._meta.get_fields()]
