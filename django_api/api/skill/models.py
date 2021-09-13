@@ -16,7 +16,7 @@ class Project(BaseModel):
 class Skill(BaseModel):
     name = models.CharField(max_length=100)
     description = models.TextField(max_length=500, null=True, blank=True)
-    projects = models.ManyToManyField(Project, related_name='skills')
+    projects = models.ManyToManyField(Project, related_name='skills', blank=True)
     visible = models.BooleanField(default=True)
     icon = models.CharField(max_length=50, null=True, blank=True)
 
